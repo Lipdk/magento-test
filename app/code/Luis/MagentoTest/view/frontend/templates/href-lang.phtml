@@ -1,0 +1,9 @@
+<?php
+/** @var \Luis\MagentoTest\Block\Cms\HeadHrefLang $block */
+$stores = $block->getStoresAvailability();
+?>
+<?php if (!empty($stores)): ?>
+    <?php foreach ($stores as $store): ?>
+        <link rel="alternate" hreflang=“<?= $store->getCode() ?>" href="<?= $store->getData('domain') ?><?= $block->getCmsPage()->getIdentifier() ?>" />
+    <?php endforeach; ?>
+<?php endif; ?>

@@ -1,0 +1,18 @@
+<?php
+/** @var \Luis\MagentoTest\Block\HeadAdditional $block */
+$primaryBgColor = $block->getPrimaryBgColor();
+$primaryTextColor = $block->getPrimaryTextColor();
+if (!empty($primaryTextColor) && !empty($primaryBgColor)):
+?>
+
+<style>
+    .action.primary,
+    .action.primary:hover,
+    .action.primary:active {
+        background: #<?= $primaryBgColor ?>;
+        border-color: #<?= $primaryBgColor ?>;
+        color: #<?= $primaryTextColor ?>;
+    }
+</style>
+
+<?php endif; ?>
